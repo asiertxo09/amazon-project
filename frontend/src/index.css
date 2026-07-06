@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-ink: #0f1b2d;
+  --color-navy: #131a22;
+  --color-navy-light: #232f3e;
+  --color-amazon: #ff9900;
+  --color-amazon-dark: #e88a00;
+  --color-canvas: #f7f8fa;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+
+#root {
+  min-height: 100svh;
+}
