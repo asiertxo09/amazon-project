@@ -1,0 +1,18 @@
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+backend/.venv/
+backend/ml/*.joblib
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/build/
+
+# OS/editor cruft
+.DS_Store

@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-docx
+python-pptx
+openpyxl
+pandas
+scikit-learn
+numpy
+groq
+openai
+instructor
+sentence-transformers
+imbalanced-learn
+joblib
+pytest
+pytest-asyncio

@@ -1,0 +1,56 @@
+{
+  "opportunity_id": "TCM-RFQ-2026-LM-01",
+  "company_name": "Tecnomania S.L.U.",
+  "executive_summary": "Tecnomania is a mid-size Spanish electronics retailer requesting last-mile coverage for its peninsula and Balearic B2C parcel volume. Declared daily volume is 8,000 parcels, of which roughly 6,100 are serviceable under Amazon Shipping's home-delivery, B2C, <=15kg footprint once Portugal cross-border and out-of-network demand are excluded. Pricing across all three guardrail-compliant scenarios clears the 13% minimum contribution margin floor. The historical win-probability model rates this a Strong opportunity, driven primarily by high geo-fit and a clean B2C profile. Key open item: confirm final Balearic Islands volume share before locking the pricing scenario.",
+  "opportunity_score": {
+    "value": 78,
+    "label": "Strong",
+    "rationale": "High geo-fit (76%), fully serviceable weight/size profile, and no international or B2B demand outside the Portugal exclusion."
+  },
+  "serviceable_volume": {
+    "declared_daily_volume": 8000,
+    "serviceable_daily_volume": 6100,
+    "geo_fit_pct": 0.76,
+    "exclusions": [
+      {"reason": "Portugal out of coverage", "volume_impact_pct": 0.12},
+      {"reason": "Oversized parcels (>15kg or >80x80x60cm)", "volume_impact_pct": 0.045},
+      {"reason": "PUDO-only demand not compatible with home-delivery model", "volume_impact_pct": 0.035}
+    ]
+  },
+  "risk_assessment": [
+    {"category": "Operational", "risk": "Balearic Islands volume share not finalized, affecting cost-to-serve estimate", "severity": "Med", "evidence": "Service_description.pptx, slide 6"},
+    {"category": "Commercial", "risk": "Incumbent carrier pricing undercuts aggressive scenario by ~4%", "severity": "Low", "evidence": "Opportunity1_Tecnomania.docx, pricing section"},
+    {"category": "Financial", "risk": "Conservative scenario margin sits close to the 13% floor if Balearic share exceeds 20%", "severity": "Med", "evidence": "pricing_tables.json guardrails"}
+  ],
+  "pricing_scenarios": [
+    {"name": "Aggressive", "margin_pct": 14.2, "avg_price_per_parcel_eur": 3.85, "rationale": "Wins volume against incumbent at the lowest guardrail-compliant margin.", "tradeoffs": "Thin buffer above the 13% floor; any FX or weight-mix shift risks a no-go re-price."},
+    {"name": "Balanced", "margin_pct": 17.5, "avg_price_per_parcel_eur": 4.20, "rationale": "Targets the midpoint between guardrail floor and target margin.", "tradeoffs": "Moderately competitive; acceptable buffer for weight-band variance."},
+    {"name": "Conservative", "margin_pct": 21.0, "avg_price_per_parcel_eur": 4.65, "rationale": "Meets the 21% target margin used as the internal benchmark.", "tradeoffs": "Least competitive versus incumbent; higher win-probability risk."}
+  ],
+  "commercial_strategy": "Lead with the Balanced scenario to stay price-competitive against the incumbent while preserving margin buffer, and use the Aggressive scenario only if Tecnomania signals a hard price ceiling. Sequence a pilot on peninsula volume first, adding Balearic Islands once the x1.35 regional multiplier is validated against a live weight-band sample.",
+  "follow_up_actions": [
+    "Confirm exact Balearic Islands daily volume share with Tecnomania before finalizing scenario",
+    "Request 4-week weight/size distribution sample to validate oversized exclusion estimate",
+    "Clarify current incumbent contract length and any exit penalties"
+  ],
+  "win_probability": {
+    "value_pct": 71,
+    "model": "logreg_v1",
+    "top_factors": [
+      {"factor": "geo_fit_pct", "direction": "+"},
+      {"factor": "oversized_pct", "direction": "-"},
+      {"factor": "price_vs_incumbent_pct", "direction": "-"}
+    ]
+  },
+  "pitch_deck_url_or_markdown": "# Tecnomania S.L.U. -- Amazon Shipping Proposal\n\n## Why Amazon Shipping\nServiceable daily volume of ~6,100 parcels across peninsula and Balearic Islands B2C demand...\n\n## Pricing\nBalanced scenario recommended at EUR4.20/parcel avg, 17.5% contribution margin.\n\n## Next Steps\nConfirm Balearic volume share, then move to pilot.",
+  "sources_used": [
+    {"doc": "Service_description.pptx", "detail": "slide 6, weight/size limits and coverage area"},
+    {"doc": "Opportunity1_Tecnomania.docx", "detail": "declared volume and geography split"},
+    {"doc": "PL_Industry_Challenge.xlsx", "detail": "pricing tables and guardrail thresholds"},
+    {"doc": "Historical_Opportunities.xlsx", "detail": "360-row training set for win-probability model"}
+  ],
+  "assumptions_and_open_questions": [
+    "Assumed Balearic Islands share is 15% of serviceable volume pending client confirmation",
+    "Assumed weight/size distribution matches Tecnomania's stated category mix (electronics, low oversized rate)"
+  ]
+}

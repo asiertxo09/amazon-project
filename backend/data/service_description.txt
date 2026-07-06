@@ -1,0 +1,98 @@
+--- slide 1 ---
+IE University 
+Industry Challenge 2026 
+--- slide 2 ---
+This case has been developed for academic purposes only.
+While inspired by real business challenges, certain data points, assumptions, and scenarios may have been modified, simplified, or anonymized to support learning objectives. 
+The information contained in this document should not be considered an official Amazon Shipping presentation, commercial proposal, or company position. 
+AMAZON CONFIDENTIAL
+--- slide 3 ---
+How do we work?Pick up and Delivery
+AMAZON CONFIDENTIAL
+Every shipment,
+Every channel
+Pick up in your warehouse 
+Injection in our Sort Centers
+Express Delivery 
+(1-2 days) in Spain*
+*Amazon Shipping provides delivery services throughout the Spanish Peninsula and Balearic Islands. At this time, deliveries to Portugal, the Canary Islands, Ceuta and Melilla are not supported.
+*Amazon Shipping currently provides Home Delivery services only. Capabilities such as PUDO (Pick-Up & Drop-Off) locations, international shipping and B2B delivery services (palletized) are being considered for future development.
+*Amazon Shipping currently does not provide client return services
+--- slide 4 ---
+Why Amazon Shipping Spain?
+60 segs callback by phone
+Tracking in 100% of shipments
+7/7 injection & delivery 
+Saturday/Sunday delivery included in price, no extra cost
+High reliability: Delivery accuracy @ 98,7% 
+Easy claim management
+AMAZON CONFIDENTIAL
+24-48 hour delivery
+Exceptional Peak Season performance
+Up to 5 attempts of delivery
+Simplified rates, Price is “all included” (no fuel surcharges, peak surcharges, etc.)
+Streamlined processes
+Satisfied customers
+Fast & Reliable promise
+Speed and Reliability
+Exceptional experience
+Customer Obsession
+--- slide 5 ---
+Premium Delivery Features 
+AMAZON CONFIDENTIAL
+Enhancing security and customer experience at delivery 
+One-Time Password (OTP)
+Signature on Delivery (SOD) 
+Photo captured when the parcel is delivered to a safe place
+Enhanced proof of delivery
+Greater visibility for customers and shippers
+Helps reduce delivery disputes
+Included at no additional cost
+Photo on Unattended Delivery (POUD)
+Unique code required upon delivery
+Ensures the parcel is handed to the intended recipient
+Ideal for high-value shipments
+Additional layer of security
++€0.35 per package 
+Recipient signature captured at delivery
+Enhanced Proof of Delivery
+Increased accountability and traceability
+Suitable for sensitive or regulated products
++€0.10 per package 
+Flexible delivery options combining convenience, security and enhanced proof of delivery for your customers. 
+--- slide 6 ---
+What can you ship with Amazon Shipping?
+Dimensions
+Max weight: 15 Kg
+Max dimension: 80x80x60 cm
+Forbidden products
+Dangerous Goods Category 2 
+(examples: Explosive materials, Dynamites, etc) 
+AMAZON CONFIDENTIAL
+--- slide 7 ---
+Shipper Central Interface
+3P Integrators
+API
+Amazon Shipping
+Integrate with our API to manage shipments from your own software
+We have a team to support you
+Easy to use website that allows you to manage your transactions
+AMAZON CONFIDENTIAL
+Same interface for all Amazon Shipping features
+Fast launch, management benefits
+Interface similar to your information system
+Integration options
+Integration already in place with most popular 3P integrators
+--- slide 8 ---
+Notifications: Amazon Shipping keeps recipients informed through email and SMS notifications at key delivery milestones, including shipment creation, in-transit updates, out-for-delivery notifications, and delivery confirmation.
+Claims: Self-service claim filing via Shipper Central: file, track and resolve in one place. Automated approval for the majority of claims based on Amazon scan history. Funds credited within approximately 7 calendar days of claim approval
+Loss rate: 0.07% of inducted parcels & Damage rate: 0.15% of inducted parcels
+Customer Service: Same service standards as Amazon.es customer service. 60-second callback for shipper representatives, 7 days a week. Agents trained specifically for e-commerce shippers and their end-customers 
+End-customer notifications fully brandable (SMS, email) 
+Amazon Shipping processes and compensates validated loss and damage claims in accordance with the applicable provisions of the Spanish Land Transport Act (Ley de Ordenación de los Transportes Terrestres - LOTT) and related transport regulations.  
+AMAZON CONFIDENTIAL
+Other Relevant Info
+--- slide 9 ---
+Questions?
+AMAZON CONFIDENTIAL
+Access to our Website

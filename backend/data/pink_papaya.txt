@@ -1,0 +1,126 @@
+Disclaimer
+This challenge has been created for academic purposes only. It is inspired by real business situations encountered in the enterprise logistics industry, but it has been substantially modified, simplified and anonymised to support the learning objectives of this course.
+All companies, brands, individuals, opportunities, volumes, prices, costs, service metrics and historical outcomes presented in these materials are fictional. Any resemblance to actual companies, brands or persons — including the prospect companies created for this exercise — is purely coincidental. The cost figures, pricing structures and financial guardrails have been randomised and do not reflect Amazon Shipping's real cost base, commercial terms or operating economics.
+These materials do not constitute an official Amazon Shipping presentation, commercial proposal or company position, and should not be relied upon for any commercial or operational decision. They are intended solely for use within the IE University Industry Challenge 2026 and must not be distributed outside that context.
+OPPORTUNITY DISCOVERY PACK
+CRM Notes & Email Correspondence
+Amazon Shipping  —  Enterprise Business Development
+Account: Pink Papaya S.L.   |   Opportunity ID: OPP-2026-0457
+Owner: Daniel Roca, Enterprise BD
+Last updated: 11 June 2026
+INTERNAL — NOT FOR DISTRIBUTION
+This pack compiles unstructured notes and correspondence captured during the discovery phase. Information is fragmentary and, in places, has not yet been reconciled.
+Part 1 — CRM Notes
+The following entries were logged in the Amazon Shipping CRM by the account owner over the course of the discovery phase. Entries are in reverse-chronological order (most recent first). Notes are informal and reflect the BD's running impressions; figures are as reported by the prospect and not yet validated.
+Account Overview
+9 June 2026   ·   Call — 35 min, with Lucía Ferrán (COO)
+Good first qualification call. Lucía is sharp, ex-consulting, joined Pink Papaya 8 months ago to professionalise ops. She owns logistics, CX and finance. Founders (Marta and Jandro) stay on brand/product.
+Pain is real and urgent. Their incumbent courier is "breaking" every time volume spikes. Last peak was a disaster — lots of parcels dumped at pickup points with no notice to the customer. Lucía said their Instagram DMs "turned into a customer service hotline" for two weeks.
+Volumes: she threw out "around 3,500-4,000 parcels a day on a normal week, way more in drops and sales." Wants to firm this up with real data. Growing fast — roughly 4x year on year.
+Geography: most of it is Spain, but she mentioned more than once they're "about to go big in France" and that whatever carrier they pick "needs to grow with us." Flagged this as important — need to dig into whether FR is in scope for day one or later.
+Weekend: didn't ask for it directly, but when I asked when they ship most, she said "our sales spike Thursday to Sunday, the weekend is when everything happens." Worth pulling on this thread.
+9 June 2026   ·   Internal note (post-call)
+Gut feel: strong fit on the Spain home-delivery core. The peak story is exactly our sweet spot. Risk areas: France (we don't do it), possible PUDO ask, and I need to understand their parcel profile — if they're moving into bulky home goods that changes things.
+Action: send service overview, set up follow-up with their data.
+3 June 2026   ·   Inbound lead — webform + LinkedIn
+Lucía reached out via the Amazon Shipping contact form and pinged me on LinkedIn the same day. Quote from the form: "We've outgrown our current courier and need a partner who won't collapse on us during sales season."
+Mentioned they were referred by a contact who ships with us and is happy. Warm lead.
+3 June 2026   ·   Desk research
+Pink Papaya: founded early 2024 in Madrid. D2C fashion, very strong on social (combined ~600k followers across IG + TikTok). Mostly womenswear + accessories, some unisex. Price points €40-180, sweet spot around €95.
+They do frequent "drops" (limited collections) that sell out in hours — these create sharp, short demand spikes on top of the seasonal peaks.
+Spotted on their site: a small but growing "Papaya Home" line — candles, ceramics, small textiles, a few larger decor pieces. Worth checking parcel sizes; some of this could be bulky/heavy.
+Reviews: Trustpilot sits around 3.4. Reading the negative ones, the overwhelming theme is delivery — "never arrived", "left at a shop 40 min away", "took 3 weeks to get a refund for a lost parcel." Delivery is clearly hurting the brand.
+Part 2 — Email Correspondence
+The thread below was exchanged between Lucía Ferrán (COO, Pink Papaya) and Daniel Roca (Enterprise Business Development, Amazon Shipping) following the first qualification call. Emails are presented in chronological order (oldest first).
+Hi Lucía,
+Thanks again for your time yesterday — really enjoyed the conversation, and I think there's a strong fit between what Pink Papaya needs and what we do best, especially around peak resilience and the weekend.
+To put together something genuinely useful for you, it would help to nail down a few things. No need for perfect data — rough is fine for now:
+Average daily volume on a normal week, and roughly what it looks like during a big sale or a drop.
+Geographic split — what % is Spain vs. anywhere else, and what your plans are for the next 12 months.
+Parcel profile — typical weight and dimensions, and whether the "Papaya Home" range changes that picture.
+Whether you need home delivery only, or pickup points / lockers as well.
+On the points you raised yesterday: weekend delivery is included in our standard service at no extra charge (Saturday and Sunday), which sounded relevant given your Thursday-to-Sunday peak. And on the "collapsing at peak" issue — that's exactly the kind of thing we're built for. Happy to walk you through how we handled last Black Friday.
+Whenever you have ten minutes to jot answers down, that's perfect.
+Best,
+Daniel Roca
+Enterprise Business Development
+Amazon Shipping
+Hi Daniel,
+Sorry for the late reply — it's been one of those weeks. Let me dump what I have, apologies if it's a bit messy. Shout if anything doesn't make sense.
+Volumes. On a normal week we're doing about 3,800 parcels a day. During our big sale moments it's a different planet — last Black Friday we hit roughly six times a normal day and our courier simply couldn't cope. Drops are shorter but brutal: a collection can sell out in two hours and we'll ship a few thousand orders the next morning.
+Geography. Spain is the bulk of it today — call it three quarters. The rest is split between France and Italy, which have been growing on their own through the website without us even pushing. Honestly France is becoming core for us — Marta wants it treated as a home market, not an afterthought, and whoever we work with has to be able to deliver there properly. Italy is smaller and we're more relaxed about it. We also have a trickle into Portugal but it's tiny.
+Parcels. 90% of what we ship is apparel and accessories, so light and soft — most of it well under 2kg. The Papaya Home line is a small part of orders but some of it is chunkier (a few ceramic and textile pieces, the odd larger decor item). Nothing enormous, but I wouldn't want to pretend it's all featherweight.
+Delivery type. The vast majority of our customers want it delivered to their door — that's the Pink Papaya experience and what the brand is about. That said, our current courier has been pushing pickup points hard, and a chunk of our customers have ended up using them, mostly because home delivery kept failing. I'd love to understand what you'd recommend here.
+The real issue. I'll be blunt about why we're talking to you. Three things are killing us:
+Peak. When volume spikes, our courier drops parcels at random pickup points without telling anyone. Customers blame us, not them. Last peak our refund rate tripled and our DMs were chaos.
+Claims. When something is lost or damaged, it takes them the best part of a month to pay us back, and they ask for a mountain of paperwork every time. With our cash position that genuinely hurts.
+Their customer service. It's slow and impersonal, so every delivery problem lands back on my tiny CX team. We're spending hours a day chasing "where is my order" on behalf of a courier we pay.
+What I care about most is that our customers actually get their parcel, on time, at home, even when we're slammed — and that when something goes wrong it's sorted fast without my team having to fight for it. If you can show me that, you have my attention.
+One more thing — we're not in a rush to rip everything out, but I'd want a partner who can scale into France with us over the next year. That's a real factor in who we pick.
+Let me know what else you need.
+Best,
+Lucía Ferrán
+COO, Pink Papaya
+Hi Lucía,
+This is really helpful, thank you — no need to apologise, "messy" is exactly what I need at this stage.
+A few quick follow-ups so I size this correctly rather than guessing:
+On geography — when you say roughly three quarters Spain, are you able to get me the actual France and Italy shares from the last couple of months? It makes a real difference to how I scope the proposal.
+On France being "core" — is the expectation that a carrier serves France from day one, or is it more that they need a credible path to it over the next year as you scale? I want to make sure I'm solving the right problem.
+On the Papaya Home pieces — could you get me even ballpark weights and dimensions of the chunkier items? Specifically anything over 15kg or larger than roughly 80×80×60cm would be useful to flag.
+On pickup points — understood that home delivery is the experience you want. Just so I'm clear: is your customers' use of pickup points something you actively want to keep offering, or is it mostly a workaround because home delivery has been failing?
+On your three pain points — peak, claims and customer service — those are honestly three of the things we talk about most with shippers like you, and I'd like to build the proposal directly around them. I'll come back with how we'd approach each.
+I'll also be upfront that there may be parts of your current setup we'd handle differently rather than replicate one-for-one — but let me get your numbers first and I'll be specific.
+Have a great weekend,
+Daniel Roca
+Enterprise Business Development
+Amazon Shipping
+Hi Daniel,
+Quick one before the weekend, looping in Marta (co-founder) as she has strong views on France.
+I pulled rough numbers: last month Spain was about 76% of parcels, France about 18%, Italy about 5%, Portugal the remaining 1%. Take it with a pinch of salt, our reporting isn't perfect.
+On France — and Marta will probably jump in here — we genuinely see it as a second home market. But I'll be honest that operationally we could live with launching the new carrier on Spain first and adding France a bit later, as long as the plan is real and not vapourware. Italy we're happy to leave on the back burner for now; I know I said it'd be "nice to include" but it's not a deal-maker.
+Pickup points — thinking about it properly, it's a workaround. If home delivery actually worked at peak, I don't think we'd need them. I won't die on that hill.
+Home line weights — I asked the warehouse. Most is fine, but we do have a few items (a ceramic lamp, a couple of larger mirrors and a small rug) that are either heavy or awkwardly large. Low volume, but they exist and customers do order them alongside clothes in the same basket sometimes.
+And yes — please build it around peak, claims and CX. If you nail those three I can sell this internally easily.
+Marta, anything to add on France?
+Best,
+Lucía Ferrán
+COO, Pink Papaya
+Hi Daniel,
+Marta here, co-founder. Lucía's covered the detail — just want to be clear on one thing because it matters to me.
+France is not a "maybe later" for us. Our fastest-growing customer base right now is French, and the brand resonates there in a way that genuinely surprised us. I'm not comfortable choosing a logistics partner that can only do Spain and crosses their fingers on France. Even if we phase it, I need to know France is real and coming, with a timeline.
+I realise that might be a tough requirement and I'd rather know now than three months in. So please be straight with us about what you can and can't do there.
+Other than that — everything Lucía said about peak and the customer experience is spot on. We're a brand that lives and dies on how people feel about us, and right now delivery is the worst part of the experience.
+Thanks,
+Marta Liaño
+Co-founder, Pink Papaya
+Company | Pink Papaya S.L.
+Sector | Direct-to-consumer fashion (mid-premium)
+Founded | Madrid, January 2024
+HQ / Warehouse | Single fulfilment site, Getafe (Madrid)
+Channels | Own webstore (pinkpapaya.com), Instagram & TikTok shops
+Avg. basket value | ~ EUR 95 (VAT excl.)
+Current carrier | Incumbent national courier (2-year relationship inherited from founders' previous venture)
+Opportunity stage | Discovery / Qualification
+Owner | Daniel Roca, Enterprise BD
+From:  Daniel Roca <daniel.roca@amazonshipping.example>
+To:  Lucía Ferrán <lucia@pinkpapaya.com>
+Date:  Wednesday, 10 June 2026, 09:14
+Subject:  Great speaking yesterday — next steps
+From:  Lucía Ferrán <lucia@pinkpapaya.com>
+To:  Daniel Roca <daniel.roca@amazonshipping.example>
+Date:  Thursday, 11 June 2026, 22:47
+Subject:  RE: Great speaking yesterday — next steps
+From:  Daniel Roca <daniel.roca@amazonshipping.example>
+To:  Lucía Ferrán <lucia@pinkpapaya.com>
+Date:  Friday, 12 June 2026, 11:30
+Subject:  RE: Great speaking yesterday — next steps
+From:  Lucía Ferrán <lucia@pinkpapaya.com>
+To:  Daniel Roca <daniel.roca@amazonshipping.example>
+Cc:  Marta Liaño <marta@pinkpapaya.com>
+Date:  Friday, 12 June 2026, 19:05
+Subject:  RE: Great speaking yesterday — next steps
+From:  Marta Liaño <marta@pinkpapaya.com>
+To:  Daniel Roca <daniel.roca@amazonshipping.example>
+Cc:  Lucía Ferrán <lucia@pinkpapaya.com>
+Date:  Saturday, 13 June 2026, 10:22
+Subject:  RE: Great speaking yesterday — next steps

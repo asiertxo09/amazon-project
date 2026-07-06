@@ -1,0 +1,312 @@
+Disclaimer
+This challenge has been created for academic purposes only. It is inspired by real business situations encountered in the enterprise logistics industry, but it has been substantially modified, simplified and anonymised to support the learning objectives of this course.
+All companies, brands, individuals, opportunities, volumes, prices, costs, service metrics and historical outcomes presented in these materials are fictional. Any resemblance to actual companies, brands or persons — including the prospect companies created for this exercise — is purely coincidental. The cost figures, pricing structures and financial guardrails have been randomised and do not reflect Amazon Shipping's real cost base, commercial terms or operating economics.
+These materials do not constitute an official Amazon Shipping presentation, commercial proposal or company position, and should not be relied upon for any commercial or operational decision. They are intended solely for use within the IE University Industry Challenge 2026 and must not be distributed outside that context.
+REQUEST FOR QUOTATION
+Last-Mile Parcel Delivery Services
+Iberian Markets  —  2027 / 2028
+Reference: TCM-RFQ-2026-LM-01
+Issued: 22 June 2026
+Issued by: Tecnomania S.L.U.
+CONFIDENTIAL
+This document and any annexes contain confidential information owned by Tecnomania S.L.U. and are intended exclusively for the recipient invited to participate in this tender. Any disclosure, reproduction or distribution to third parties is strictly prohibited.
+Table of Contents
+1.  Letter of Invitation
+2.  About Tecnomania
+3.  Tender Objectives & Scope
+4.  Evaluation Criteria
+5.  Volume Profile & Forecast
+6.  Geographic Coverage
+7.  Service Level Requirements
+8.  Peak Season Requirements
+9.  Technology & Integration
+10.  Commercial & Invoicing Requirements
+11.  Pricing Structure & Submission Format
+12.  Tender Process & Timeline
+13.  Confidentiality & Data Protection
+14.  Contact Information
+1.  Letter of Invitation
+Madrid, 22 June 2026
+Dear Carrier Partner,
+Tecnomania S.L.U. (hereinafter "Tecnomania") is pleased to invite your organisation to participate in our Request for Quotation for last-mile parcel delivery services covering the Iberian peninsula and adjacent territories, with a contract starting on 1 January 2027.
+Over the past four years, Tecnomania has positioned itself as one of the fastest-growing consumer electronics retailers in Southern Europe. Our business has scaled from 0.4 million to 2.9 million parcels per year, and we now serve more than 1.6 million unique customers across our Spanish and Portuguese operations.
+As our business continues to expand, the quality and reliability of our last-mile delivery experience has become one of the most critical drivers of customer satisfaction, repurchase rate and brand reputation. We are therefore launching a structured tender process to identify one or more carrier partners capable of supporting our growth ambitions over the next 24 months.
+We invite your organisation to submit a competitive offer addressing the requirements outlined in this document. Our intention is to establish a long-term partnership built on operational excellence, transparency and continuous improvement.
+Selection criteria will include, but are not limited to: pricing competitiveness, service level performance, peak season capacity, technology integration capabilities, claims management quality and end-customer experience.
+Submissions must be received by the deadlines specified in Section 12. All questions should be directed to the contact listed in Section 14 during the dedicated Q&A window.
+We look forward to receiving your proposal.
+Yours sincerely,
+Carmen Velázquez
+Head of Logistics & Distribution
+Tecnomania S.L.U.
+2.  About Tecnomania
+Tecnomania S.L.U. is a leading online retailer of consumer electronics, headquartered in Barcelona, Spain. Founded in 2014, the company operates a direct-to-consumer e-commerce platform (tecnomania.com) and is also present on selected third-party marketplaces across the Iberian market.
+2.1  Company Snapshot
+2.2  Product Categories
+Our catalogue is organised across the following primary categories:
+Smartphones, smartwatches and mobile accessories (32% of shipments)
+Laptops, tablets and computing peripherals (24% of shipments)
+Gaming consoles, gaming PCs and accessories (15% of shipments)
+Headphones, speakers and home audio (11% of shipments)
+Smart home devices, cameras and connectivity (9% of shipments)
+Televisions, large monitors and large displays (6% of shipments)
+Major appliances and other oversized items (3% of shipments)
+2.3  Customer Base
+Tecnomania serves three customer segments:
+Retail consumers (B2C) via tecnomania.com and marketplace channels. This represents the majority of our shipments and is the primary focus of this tender.
+Tecnomania Pro members: small and medium businesses, independent retailers and IT resellers who purchase under our B2B programme. Tecnomania Pro currently represents approximately 6% of our annual shipment volume. These shipments are typically delivered to professional addresses during standard business hours and may occasionally include palletised or multi-parcel orders.
+Click & Collect customers, served from our store network in major Spanish cities. Click & Collect orders are out of scope for this tender.
+2.4  Average Order Profile
+Tecnomania's average basket value of EUR 287 (VAT excl.) is significantly above the e-commerce sector average. This is driven by the nature of our product mix: a substantial share of our parcels contain high-value items such as smartphones, premium laptops and gaming hardware. As a result, end-customer experience at the point of delivery is a critical brand touchpoint and proof-of-delivery integrity is essential to minimise commercial disputes.
+3.  Tender Objectives & Scope
+3.1  Objectives
+Through this tender, Tecnomania seeks to:
+Secure carrier capacity to support our projected growth trajectory across Iberia over the 2027-2028 period.
+Improve our end-customer delivery experience, particularly in terms of on-time delivery, multi-attempt resilience and weekend coverage.
+Reduce delivery-related disputes and "item not received" claims, which currently represent a meaningful share of our customer service ticket volume.
+Eliminate billing unpredictability associated with fuel, peak and other discretionary surcharges.
+Establish a transparent, data-driven and collaborative partnership with one or more strategic carrier(s).
+3.2  Scope
+The scope of this tender covers:
+Pickup of parcels from Tecnomania fulfilment centres in Madrid and Barcelona.
+Linehaul and sortation across the carrier's network.
+Last-mile home delivery to end customers across Spain and Portugal, including peninsular and insular territories.
+Premium delivery options where applicable 
+Standard return shipments from end-customer to Tecnomania fulfilment centres.
+Tecnomania Pro B2B deliveries, where the carrier is able to support business address delivery during working hours.
+3.3  Out of Scope
+Inbound supplier deliveries to Tecnomania warehouses.
+Click & Collect deliveries to our retail stores.
+Cross-border international shipments outside of Spain and Portugal.
+Customs clearance services.
+3.4  Award Approach
+Tecnomania reserves the right to award the contract to a single carrier or to split the volume between two or more carriers based on the strengths of each proposal and the geographic or service-level fit. Tecnomania also reserves the right to terminate this tender at any stage without obligation toward participating bidders.
+4.  Evaluation Criteria
+Proposals will be evaluated using the following weighted criteria. The weights reflect the relative importance of each dimension to Tecnomania's overall delivery strategy.
+4.1  Mandatory Requirements
+Notwithstanding the weighted criteria above, the following elements are considered mandatory and any proposal that fails to meet them in full may be discarded from the evaluation:
+Clear pricing model: including fuel surcharges, peak surcharges, weekend surcharges, congestion fees or similar discretionary charges that may be applied. Any additional cost must be explicitly listed in the submitted pricing.
+Minimum of 3 delivery attempts at the end-customer's home address before any alternative outcome.
+Real-time, parcel-level tracking with end-to-end visibility from pickup to final delivery, accessible to both Tecnomania operations and end customers.
+API integration capable of supporting our daily volume with full automation of label creation, manifest, tracking events and claims.
+Documented track record of delivering peak season volumes representing at least 5x the daily baseline without operational breakdown.
+5.  Volume Profile & Forecast
+5.1  Annual Volume Projection
+The volumes below reflect Tecnomania's projected shipments for the 12 months from 1 January 2027 to 31 December 2027. Forecasts are based on FY2025 actuals plus our 27% projected growth, adjusted for new product launches and channel expansion.
+5.2  Monthly Seasonality
+Tecnomania experiences pronounced seasonality, driven by Q4 commercial events (Black Friday, Cyber Monday, Christmas) and to a lesser extent by summer sales periods. The table below shows our expected monthly distribution of volume.
+5.3  Geographic Distribution
+Tecnomania serves customers across the full territory of Spain and Portugal. The geographic distribution below is based on FY2025 actuals and is expected to remain stable over the contract period. All distribution centers operate seven days per week to support customer demand and peak season requirements. 
+5.4  Weight Profile
+The following table reflects the distribution of our shipments by real weight band, based on FY2025 actuals. Volumetric (dimensional) weight is generally not relevant for our product mix as our packaging is closely fitted to product dimensions.
+Heavy boxes correspond to large displays, gaming chairs and selected major appliances.
+5.5  Parcel Dimensions
+The vast majority of our parcels fall within standard dimensions suitable for automated sortation networks. 
+5.6  Customer Type Split
+B2B Tecnomania Pro shipments share the same fulfillment infrastructure as our B2C flow and are not significantly different in terms of weight or dimensions. The main operational distinction is that delivery must occur during business hours and is occasionally requested to be palletised when the order includes 6 or more units of identical SKU.
+6.  Geographic Coverage
+The selected carrier(s) must demonstrate the ability to deliver across the territories listed in Section 5.3. Bidders are requested to confirm coverage and transit times for each region in their proposal.
+6.1  Required Service Levels by Region
+If your organisation is unable to cover any of the regions listed above, please clearly state this in your proposal and indicate whether you would propose a sub-contracted or alternative arrangement.
+6.2  Alternative Delivery Options
+As a minimum requirement, Tecnomania expects the following waterfall process following an unsuccessful home delivery attempt:
+Attempt 1: end-customer's home address.
+Attempt 2: end-customer's home address with prior SMS / email notification offering rescheduling options.
+Attempt 3: end-customer's home address with mandatory pre-notification.
+Final fallback (only if all three home attempts fail and end-customer has expressly consented): redirection to a pickup point / parcel locker / collection office in the same postal code area.
+Drop-offs at pickup points without end-customer consent are strictly prohibited and will be considered a material breach.
+7.  Service Level Requirements
+7.1  Key Performance Indicators
+The carrier will be measured against the following KPIs. Service-level failures may result in financial penalties as defined in the final contract.
+7.2  Delivery Attempts
+Tecnomania requires a minimum of three delivery attempts to the consignee's home address on business days. Carriers offering weekend delivery capabilities should detail the associated service levels and clearly indicate any additional charges applicable to Saturday and/or Sunday deliveries.
+7.3  Premium Delivery Options
+Due to the high-value nature of many of its products, Tecnomania has experienced delivery-related challenges in the past, including fraud, recipient disputes and insufficient proof of delivery. As a result, Tecnomania is interested in understanding any enhanced delivery security, recipient verification and proof-of-delivery services available from participating carriers.
+Carriers should describe the solutions offered, indicate any recommended use cases or limitations, and clearly specify any additional fees associated with these services.
+7.4  Returns Management
+Tecnomania anticipates a returns volume of approximately 8.5% of forward shipments. The carrier must:
+Provide a digital returns label generation flow integrated with our customer portal.
+Offer pickup of returns from the customer's home address or, alternatively, drop-off at a network of return points.
+Consolidate and deliver returns to Tecnomania's Madrid fulfilment centre within 5 working days of pickup.
+Provide separate tracking and reporting for return flows.
+7.5  Claims Management
+Tecnomania currently experiences a significant operational burden related to delivery disputes, principally driven by:
+Parcels declared as delivered by the carrier but reported as not received by the consignee.
+Slow resolution of damage and loss claims (current carrier average: 28 days).
+Disproportionate documentation requirements (multiple photos, declarations, repeat submissions).
+Tecnomania expects the selected carrier to operate a streamlined, evidence-based claims process with automated approval for clear-cut cases and resolution within 15 calendar days for the vast majority of claims.
+8.  Peak Season Requirements
+Peak season management is a critical capability for Tecnomania. Our business is heavily concentrated in Q4, with Black Friday week alone representing approximately 6% of our full-year volume. The reliability of our carrier(s) during these periods directly impacts revenue, customer satisfaction and brand reputation.
+8.1  Peak Volume Profile
+8.2  Peak Service Commitments
+Bidders are expected to demonstrate and contractually commit to:
+Guaranteed capacity to accept the peak volumes outlined above without rejection or capping.
+Maintained service-level KPIs during peak periods.
+No reduction in delivery attempts (3 minimum maintained).
+No automatic redirection of parcels to pickup points without consignee consent.
+Dedicated peak governance: pre-peak readiness review, daily operational standup during peak weeks, post-peak post-mortem with corrective actions.
+Tecnomania's recent experience with peak operations has been challenging: in November 2025, our incumbent carrier dropped 23% of Tecnomania parcels at unscheduled pickup points without consignee notification, resulting in significant volumes of customer complaints, refund requests and reputational damage on social media. This experience has made peak resilience our number one consideration for the 2026 tender.
+9.  Technology & Integration
+9.1  Integration Requirements
+Tecnomania operates a modern e-commerce technology stack and requires deep, automated integration with the selected carrier(s).
+REST API for label generation, manifest creation, parcel tracking and claims, with documented endpoints and authentication.
+Webhook-based status event delivery, with sub-1-hour latency for major status events (picked up, in transit, out for delivery, delivered, exception).
+Customer-facing tracking page, customisable with Tecnomania branding and the option to embed within tecnomania.com.
+Shipper portal access for operations and customer service teams, with multi-user support, role-based permissions and full claim management workflow.
+Bulk export of activity (CSV, Excel) for finance reconciliation and operational analysis.
+9.2  Reporting & Analytics
+The carrier is expected to provide:
+Monthly operational reports covering all KPIs listed in Section 7.1, with breakdown by region and service type.
+Quarterly business reviews with the carrier's senior account team.
+Annual strategic review including peak post-mortem, year-on-year performance and improvement roadmap.
+Self-service analytics dashboard accessible through the shipper portal.
+10.  Commercial & Invoicing Requirements
+10.1  Pricing Principles
+Tecnomania expects a fully transparent pricing structure. The following principles apply to all submitted offers:
+Base tariff: includes pickup, sortation, linehaul, last-mile delivery, attempted re-deliveries (up to the contractual minimum of 3).
+Any fuel, peak season, congestion, residential delivery or remote area surcharges must be clearly disclosed and itemised in the commercial proposal. 
+Premium services may be priced separately as optional add-ons.
+Returns pricing may be quoted separately from forward shipments.
+Pricing validity: minimum 12 months from contract commencement. Annual indexation, if any, must be capped and clearly defined.
+10.2  Invoicing Requirements
+Monthly invoicing cycle, issued by the 5th working day of the following month.
+Invoices must be accompanied by a structured CSV / Excel file listing every parcel, weight band, region, base price and any add-on charge, with full traceability.
+Returns and credit notes must be issued as separate documents.
+10.3  Payment Terms
+Payment terms: 60 calendar days from invoice receipt, via SEPA transfer. Tecnomania does not accept early payment discounts unless explicitly requested.
+10.4  Liability & Insurance
+The carrier shall be liable for loss, damage and delay of parcels in accordance with applicable transport law, with a minimum compensation level equivalent to the declared commercial value of the goods. Tecnomania expects the carrier to maintain appropriate insurance coverage and to include this within the base tariff (without a separate insurance surcharge).
+11.  Pricing Structure & Submission Format
+Pricing must be submitted in the format outlined in this section.
+11.1  Required Pricing Dimensions
+Bidders must submit pricing covering the following dimensions:
+Per region (matching Section 5.3 geographic breakdown).
+Per weight band (using Tecnomania's standard bands: 0-0.25kg, 0.25-0.5kg, 0.5-0.75kg, 0.75-1kg, 1-1.5kg, 1.5-2kg, 2-2.5kg, 2.5-3kg, 3-4kg, 4-5kg, 5-6kg, 6-7kg, 7-9kg, 9-12kg, 12-15kg, 15-18kg, 18-21kg, 21-24kg, 24-27kg, 27-30kg).
+Per service type (Standard Home Delivery / Returns / Premium Add-ons).
+11.2  Premium Service Pricing
+Premium services must be priced as incremental per-parcel charges on top of the base tariff. 
+11.3  Volume Discounts
+Bidders are welcome to propose volume-based discount tiers, conditional on Tecnomania reaching defined volume thresholds. If proposed, tiers must be clearly defined in terms of trigger volumes and discount levels.
+11.4  Currency & Format
+All pricing must be submitted in EUR (excluding VAT), with two decimal places. Calculations must be auditable: any indexation or formula must be documented.
+12.  Tender Process & Timeline
+12.1  Submission Format
+All submissions must include:
+Company profile and references.
+Detailed response to each section of this RFQ.
+Completed pricing template.
+Service level commitments and proposed contractual penalties.
+Sample reporting (operational dashboard, KPI report, claims report).
+Sustainability and ESG documentation.
+Submissions must be sent electronically to procurement@tecnomania.com, with the subject line "TCM-RFQ-2026-LM-01 — [Carrier Name]". Late submissions will not be considered.
+13.  Confidentiality & Data Protection
+This document, all annexes, all subsequent communication during the tender process, and any information shared by Tecnomania during operational due diligence are confidential. The bidder commits to:
+Not disclose the existence or content of this tender to any third party without prior written consent from Tecnomania.
+Limit access to this RFQ to those employees and advisors strictly required for the preparation of the response.
+Destroy or return all materials provided by Tecnomania at the conclusion of the tender, whether or not the bidder is selected.
+Personal data shared in the context of this tender (names, contact details of bidder representatives) will be processed by Tecnomania under the legal basis of pre-contractual relationship (Art. 6.1.b GDPR). For any data protection enquiry, please contact dpo@tecnomania.com.
+14.  Contact Information
+All questions related to this tender must be submitted in writing during the Q&A window. Phone or informal communications will not be considered as part of the formal process.
+Tecnomania looks forward to receiving competitive proposals and to identifying long-term partners aligned with our growth ambitions.
+Item | Detail
+Legal entity | Tecnomania S.L.U.
+Year founded | 2014
+Headquarters | Barcelona, Spain
+Fulfilment centres | Madrid (primary, 28,000 m²) · Barcelona (secondary, 14,000 m²)
+Total employees | Approx. 850 (FTE, all functions)
+Active SKUs | Approx. 18,000
+Annual parcels shipped | Approx. 2.92 million (FY2025 expected)
+YoY parcel growth | +27% (3-year CAGR)
+Markets served | Spain · Portugal
+Channels | Direct (tecnomania.com) · Marketplaces · Tecnomania Pro (B2B)
+Criterion | Weight | Description
+Pricing | 30% | Total cost competitiveness across the projected volume profile.
+Service Quality | 25% | Delivery success rate, transit time, multi-attempt policy, weekend coverage.
+Peak Capacity | 15% | Demonstrated ability to scale during Q4 peaks without service degradation.
+Technology | 10% | API maturity, real-time tracking, integration depth, end-customer notifications.
+Claims & Customer Service | 10% | Claims resolution speed, dispute handling, end-customer support.
+Geographic Coverage | 5% | Breadth and depth of coverage across required territories.
+Sustainability | 5% | Carbon footprint, electrification, packaging initiatives, ESG reporting.
+Metric | Value
+Total annual parcels (forecast) | 2,920,000
+Peak week volume (Black Friday week) | See more details below
+Returns volume | Approx. 8.5% of forward shipments
+Month | % of annual volume
+January 2027 | 7.0%
+February 2027 | 6.0%
+March 2027 | 6.5%
+April 2027 | 6.5%
+May 2027 | 7.0%
+June 2027 | 8.0%
+July 2027 | 9.5%
+August 2027 | 6.0%
+September 2027 | 7.5%
+October 2027 | 8.5%
+November 2027 | 14.5%
+December 2027 | 13.0%
+Region | % of total
+Spain - Iberian Peninsula | 80.0%
+Spain - Balearic Islands | 4.0%
+Spain - Canary Islands, Ceuta & Melilla | 2.0%
+Portugal - Mainland | 12.0%
+Portugal - Madeira & Azores | 2.0%
+Total | 100.0%
+Weight band | % of shipments
+0 - 0.5 kg | 8%
+0.5 - 1 kg | 12%
+1 - 2 kg | 25%
+2 - 5 kg | 28%
+5 - 10 kg | 17%
+10 - 15 kg | 10%
+15 - 20 kg | 6%
+20 - 30 kg | 4%
+Parcel format | % of volume | Typical dimensions (cm)
+Standard (S/M) | 78% | 30 x 22 x 12
+Large (L) | 12% | 55 x 38 x 14
+Extra-large (XL/XXL) | 10% | Up to 110 x 80 x 30
+Segment | % of volume | Delivery characteristics
+B2C (Tecnomania Direct) | 94% | Residential addresses, mostly weekday + weekend
+B2B (Tecnomania Pro) | 6% | Professional addresses, business hours only
+Region | Target delivery time | Notes
+Spain Peninsula - Tier 1 (Madrid, Barcelona, Valencia, Sevilla, Bilbao) | Next day (D+1) | Capital and major metro areas
+Spain Peninsula - Tier 2 (other peninsular Spain) | D+1 / D+2 | 95% within D+2
+Spain Balearic Islands | D+2 / D+3 | Volume concentrated in Mallorca
+Spain Canary Islands, Ceuta & Melilla | D+3 / D+5 | Lower volume; bidders to confirm capability
+Portugal Mainland | D+2 / D+3 | Lisbon, Porto and surrounding metropolitan areas
+Portugal Madeira & Azores | D+5 or longer | Bidders to confirm capability and conditions
+KPI | Target | Measurement
+On-Time Delivery (first attempt) | ≥ 94% | Parcels delivered on or before the committed date
+Successful Delivery Rate (within 3 attempts) | ≥ 97% | Parcels successfully delivered to consignee
+Parcel-level Tracking Event Reception | ≥ 99.5% within 1h | Status events received via API within 1 hour of physical event
+Claim Resolution Time (loss / damage) | ≤ 20 calendar days | From claim submission to financial resolution
+Loss Rate | ≤ 0.10% | Parcels declared lost over total shipped
+Damage Rate | ≤ 0.30% | Parcels delivered damaged over total shipped
+End-Customer Call Centre Response | ≤ 1 day | Average time to live agent (callback acceptable)
+Tecnomania Account Support Response | ≤ 4 working hours | First response time during business hours
+Event / Period | Multiplier vs baseline
+Baseline (Q1-Q3 average) | 1.0x
+Summer sales peak (early July) | Approx. 2.5x
+Pre-Black Friday week | Approx. 3.3x
+Black Friday week | Approx. 5.0x
+Cyber Monday day | Approx. 4.0x
+Christmas peak (Dec 10-22) | Approx. 4.0x
+January sales week | Approx. 2.0x
+Milestone | Date
+RFQ issued to invited bidders | 22 June 2026
+Bidders confirm intention to participate | 1 July 2026
+Q&A window opens | 2 July 2026
+Q&A window closes | 24 July 2026
+Tecnomania publishes consolidated Q&A response | 31 July 2026
+Initial offer submission deadline | 11 September 2026 (23:59 CET)
+Shortlist announcement | 25 September 2026
+Round 2 / clarification meetings | 28 September - 9 October 2026
+Best and final offer (BAFO) | 23 October 2026
+Award decision | 6 November 2026
+Contract execution | by 27 November 2026
+Service commencement | 1 January 2027
+Contact | Detail
+Primary contact | Carmen Velázquez, Head of Logistics & Distribution
+Email (tender questions) | procurement@tecnomania.com
+Email (commercial) | carmen.velazquez@tecnomania.com
+Office address | Tecnomania S.L.U., Av. Diagonal 472, 4ª planta, 08006 Barcelona, Spain
+Reference | TCM-RFQ-2026-LM-01
