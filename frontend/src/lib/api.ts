@@ -1,5 +1,6 @@
 import type { AnalyzeRequest, OpportunityResult } from "../types/contract";
 import exampleResult from "../../fixtures/example_result.json";
+import pinkPapayaResult from "../../fixtures/pink_papaya_result.json";
 
 const API_BASE_URL = (import.meta.env.VITE_API_URL ?? "").replace(/\/+$/, "");
 
@@ -30,11 +31,10 @@ async function callBackend(request: AnalyzeRequest): Promise<OpportunityResult> 
 }
 
 /**
- * Demo requests degrade to the bundled fixture when no live backend is
- * configured yet (Phase 0-3) or the live call fails — Tecnomania only, since
- * that's the one fixture shape committed for both tracks to build against.
- * Pasted-text requests always need the real pipeline; there's no honest
- * client-side stand-in for it.
+ * Demo requests degrade to a bundled fixture when no live backend is
+ * configured yet (Phase 0-3) or the live call fails — both demo opportunities
+ * have one committed. Pasted-text requests always need the real pipeline;
+ * there's no honest client-side stand-in for it.
  */
 export async function analyze(request: AnalyzeRequest): Promise<AnalyzeOutcome> {
   if (API_BASE_URL) {
@@ -48,6 +48,9 @@ export async function analyze(request: AnalyzeRequest): Promise<AnalyzeOutcome> 
 
   if (request.demo === "tecnomania") {
     return { result: exampleResult as OpportunityResult, source: "fixture" };
+  }
+  if (request.demo === "pink_papaya") {
+    return { result: pinkPapayaResult as OpportunityResult, source: "fixture" };
   }
 
   throw new AnalyzeError(

@@ -1,0 +1,62 @@
+{
+  "opportunity_id": "PPY-OPP-2026-0457",
+  "company_name": "Pink Papaya S.L.",
+  "executive_summary": "Pink Papaya is a fast-growing Madrid D2C fashion brand (~4x YoY) requesting a new last-mile partner after its incumbent courier repeatedly failed during peak sales spikes. Declared daily volume is reported inconsistently across sources -- 3,500-4,000/day in the first call versus a later, more specific 3,800/day -- and roughly 24% of that volume (France, Italy, Portugal) falls outside Amazon Shipping's current Spain + Balearic serviceable area. The co-founders are also not aligned: Marta considers France 'non-negotiable', while Lucia is open to a Spain-first phased rollout. Pricing across all three guardrail-compliant scenarios still clears the 13% minimum contribution margin floor on the Spain-only serviceable volume. The win-probability model rates this a Moderate opportunity: urgent, well-documented pain and a warm inbound lead are offset by the unresolved international scope. Key open item: get Lucia and Marta aligned in writing on whether France is required at signing or acceptable as a later phase.",
+  "opportunity_score": {
+    "value": 62,
+    "label": "Moderate",
+    "rationale": "Urgent, clearly evidenced pain (peak failures, slow claims, poor CX) and a warm inbound lead, offset by unreconciled volume figures and an unresolved France requirement that sits outside current coverage."
+  },
+  "serviceable_volume": {
+    "declared_daily_volume": 3800,
+    "serviceable_daily_volume": 2812,
+    "geo_fit_pct": 0.74,
+    "exclusions": [
+      {"reason": "France out of coverage (Marta: non-negotiable; Lucia: could phase later -- unresolved)", "volume_impact_pct": 0.18},
+      {"reason": "Italy out of coverage", "volume_impact_pct": 0.05},
+      {"reason": "Portugal out of coverage", "volume_impact_pct": 0.01},
+      {"reason": "Oversized/heavy Papaya Home items (ceramic lamp, mirrors, rug) exceeding 15kg or 80x80x60cm", "volume_impact_pct": 0.02}
+    ]
+  },
+  "risk_assessment": [
+    {"category": "Commercial", "risk": "Declared daily volume conflicts across sources: 3,500-4,000/day (first call) vs. 3,800/day (follow-up email)", "severity": "Low", "evidence": "CRM notes, 9 Jun call vs. Lucia email, 11 Jun"},
+    {"category": "Commercial", "risk": "Co-founders disagree on France: Marta calls it 'non-negotiable' and requires a firm timeline, Lucia says ops 'could live with' Spain-first and adding France later", "severity": "High", "evidence": "Email thread, Lucia 12 Jun vs. Marta 13 Jun"},
+    {"category": "Operational", "risk": "~24% of declared volume (France, Italy, Portugal) is outside Amazon Shipping's current ES + Balearic serviceable footprint", "severity": "High", "evidence": "Service_description.pptx coverage area vs. Opportunity2_PinkPapaya.docx geography split"},
+    {"category": "Operational", "risk": "A small number of Papaya Home SKUs (ceramic lamp, larger mirrors, a rug) may exceed weight/dimension limits; exact figures not yet supplied", "severity": "Low", "evidence": "Lucia email, 12 Jun -- 'a few items are either heavy or awkwardly large'"},
+    {"category": "Commercial", "risk": "Current pickup-point usage is described as a reliability workaround, not a customer preference -- upside if home delivery is reliable, but unproven at this volume", "severity": "Med", "evidence": "Lucia email, 12 Jun -- 'if home delivery actually worked at peak, I don't think we'd need them'"}
+  ],
+  "pricing_scenarios": [
+    {"name": "Aggressive", "margin_pct": 13.8, "avg_price_per_parcel_eur": 4.10, "rationale": "Prioritizes winning the account fast on Spain-only volume while still clearing the 13% guardrail floor.", "tradeoffs": "Thin buffer above the floor; leaves little room if the France scope later gets added at similar terms."},
+    {"name": "Balanced", "margin_pct": 17.5, "avg_price_per_parcel_eur": 4.55, "rationale": "Targets the midpoint between the guardrail floor and the 21% internal benchmark on the reconciled Spain-only serviceable volume.", "tradeoffs": "Competitive against an incumbent that is actively failing on service, not just price."},
+    {"name": "Conservative", "margin_pct": 21.0, "avg_price_per_parcel_eur": 5.05, "rationale": "Meets the 21% target margin, appropriate given the smaller confirmed serviceable base and open France question.", "tradeoffs": "Least aggressive on price; leans entirely on the service-reliability pitch rather than cost."}
+  ],
+  "commercial_strategy": "Lead with the Balanced scenario on Spain-only serviceable volume, and sell against the incumbent's service failures (peak reliability, claims speed, CX ownership) rather than price alone -- Pink Papaya's own words name those as the three things that matter most. Do not commit to a France date until Lucia and Marta jointly confirm scope in writing; propose France as an explicit phase-2 milestone gated on a defined timeline instead of leaving it open. Offer weekend delivery (already standard, no extra charge) as an immediate, low-risk win given their Thursday-to-Sunday demand pattern.",
+  "follow_up_actions": [
+    "Get a real 4-week volume export to reconcile the 3,500-4,000/day range against the reported 3,800/day figure",
+    "Get Lucia and Marta aligned in writing on whether France coverage is required at signing or acceptable as a phased, dated roadmap item",
+    "Request ballpark weights/dimensions on the handful of oversized Papaya Home SKUs to size the true oversized exclusion",
+    "Share Amazon Shipping's claims-processing SLA and CX escalation model directly against their three named pain points: peak reliability, claims speed, customer service ownership"
+  ],
+  "win_probability": {
+    "value_pct": 58,
+    "model": "logreg_v1",
+    "top_factors": [
+      {"factor": "pain_severity", "direction": "+"},
+      {"factor": "geo_fit_pct", "direction": "-"},
+      {"factor": "requires_intl", "direction": "-"}
+    ]
+  },
+  "pitch_deck_url_or_markdown": "# Pink Papaya S.L. -- Amazon Shipping Proposal\n\n## Why Amazon Shipping\nBuilt for exactly the peak-volume reliability problem costing Pink Papaya customer trust today -- serviceable daily volume of ~2,812 parcels across its Spain home-delivery core, with weekend delivery included as standard for its Thursday-to-Sunday demand pattern.\n\n## Addressing your three priorities\n- **Peak reliability**: no silent diversions to pickup points during volume spikes.\n- **Claims speed**: faster resolution than the current multi-week process.\n- **Customer service**: clear ownership so delivery issues don't land back on your CX team.\n\n## Pricing\nBalanced scenario recommended at EUR4.55/parcel avg, 17.5% contribution margin, on reconciled Spain-only serviceable volume.\n\n## France\nProposed as a defined phase-2 milestone once scope and timeline are confirmed jointly with Lucia and Marta.\n\n## Next Steps\nReconcile volume data, confirm France scope and timeline, then move to a Spain-first pilot.",
+  "sources_used": [
+    {"doc": "Opportunity2_PinkPapaya.docx", "detail": "CRM notes and email correspondence -- volumes, geography split, pain points"},
+    {"doc": "Service_description.pptx", "detail": "slide 6, weight/size limits and coverage area (Spain + Balearic only)"},
+    {"doc": "PL_Industry_Challenge.xlsx", "detail": "pricing tables and guardrail thresholds"},
+    {"doc": "Historical_Opportunities.xlsx", "detail": "360-row training set for win-probability model"}
+  ],
+  "assumptions_and_open_questions": [
+    "Used the more recent, specific 3,800/day figure over the earlier rough 3,500-4,000/day range as the declared baseline",
+    "Treated France as an open strategic question -- pricing above assumes a Spain-first launch, not simultaneous France coverage",
+    "Assumed pickup-point usage can be fully absorbed by reliable home delivery, per Lucia's own framing of it as a workaround rather than a preference",
+    "Assumed the oversized Papaya Home items are low-volume enough not to materially change the pricing tier, pending real weights/dimensions"
+  ]
+}
