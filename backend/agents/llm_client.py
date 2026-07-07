@@ -4,18 +4,31 @@ Both are OpenAI-SDK compatible, so swapping providers is a config change
 (`LLM_PROVIDER=groq|nvidia`), not a rewrite. `instructor` patches the client
 for schema-enforced Pydantic outputs.
 """
-import os
+
 from typing import Literal
 
 import instructor
 from openai import OpenAI
 
+from backend.config import get_settings
+
 ProviderName = Literal["groq", "nvidia"]
 ModelTier = Literal["large", "small"]
 
+# Per-provider connection config. `settings_attr` names the Settings field that
+# holds the key; `env_var` is the public variable name (used in error messages
+# and documented in .env.example).
 PROVIDER_CONFIG = {
-    "groq": {"base_url": "https://api.groq.com/openai/v1", "api_key_env": "GROQ_API_KEY"},
-    "nvidia": {"base_url": "https://integrate.api.nvidia.com/v1", "api_key_env": "NVIDIA_API_KEY"},
+    "groq": {
+        "base_url": "https://api.groq.com/openai/v1",
+        "settings_attr": "groq_api_key",
+        "env_var": "GROQ_API_KEY",
+    },
+    "nvidia": {
+        "base_url": "https://integrate.api.nvidia.com/v1",
+        "settings_attr": "nvidia_api_key",
+        "env_var": "NVIDIA_API_KEY",
+    },
 }
 
 # Best-known model names at time of writing (PLAN.md §3d) — confirm against
@@ -31,7 +44,7 @@ class LLMNotConfiguredError(RuntimeError):
 
 
 def current_provider() -> ProviderName:
-    return os.environ.get("LLM_PROVIDER", "groq")  # type: ignore[return-value]
+    return get_settings().llm_provider  # type: ignore[return-value]
 
 
 def model_for(tier: ModelTier) -> str:
@@ -41,13 +54,15 @@ def model_for(tier: ModelTier) -> str:
 def get_client() -> instructor.Instructor:
     provider = current_provider()
     if provider not in PROVIDER_CONFIG:
-        raise LLMNotConfiguredError(f"Unknown LLM_PROVIDER '{provider}', expected 'groq' or 'nvidia'")
+        raise LLMNotConfiguredError(
+            f"Unknown LLM_PROVIDER '{provider}', expected 'groq' or 'nvidia'"
+        )
 
     config = PROVIDER_CONFIG[provider]
-    api_key = os.environ.get(config["api_key_env"])
+    api_key = getattr(get_settings(), config["settings_attr"])
     if not api_key:
         raise LLMNotConfiguredError(
-            f"{config['api_key_env']} is not set — cannot call the {provider} LLM provider. "
+            f"{config['env_var']} is not set — cannot call the {provider} LLM provider. "
             "Set it as an environment variable (or Render secret) before running agents that need it."
         )
 

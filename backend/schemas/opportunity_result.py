@@ -3,7 +3,8 @@
 Mirrored in frontend/fixtures/example_result.json. Keep field names stable;
 extend only if a phase genuinely needs a new field (see PLAN.md §2).
 """
-from typing import Literal, Optional
+
+from typing import Literal
 
 from pydantic import BaseModel, Field
 
@@ -74,6 +75,6 @@ class OpportunityResult(BaseModel):
 
 
 class AnalyzeRequest(BaseModel):
-    demo: Optional[Literal["tecnomania", "pink_papaya"]] = None
-    opportunity_text: Optional[str] = None
-    company_name: Optional[str] = None
+    demo: Literal["tecnomania", "pink_papaya"] | None = None
+    opportunity_text: str | None = None
+    company_name: str | None = None

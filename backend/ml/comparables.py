@@ -5,6 +5,7 @@ on standardized numeric features to retrieve the top-k most similar past
 deals (with real outcomes) for the win-probability narrative's "comparable
 customer profiles" claim.
 """
+
 from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import StandardScaler
 
@@ -36,7 +37,7 @@ def find_comparables(features: dict, k: int = 5) -> list[dict]:
     distances, indices = nn.kneighbors(query, n_neighbors=k)
 
     results = []
-    for i, dist in zip(indices[0], distances[0]):
+    for i, dist in zip(indices[0], distances[0], strict=True):
         row = df.iloc[i]
         results.append(
             {

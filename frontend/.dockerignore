@@ -1,0 +1,11 @@
+# Frontend build context excludes (Plan_v2 P1-A4).
+node_modules/
+dist/
+dist-ssr/
+.env
+.env.*
+!.env.example
+*.local
+.DS_Store
+Dockerfile
+.dockerignore

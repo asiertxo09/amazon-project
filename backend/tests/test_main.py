@@ -26,7 +26,9 @@ def test_demo_falls_back_to_fixture_without_llm_key(monkeypatch):
 def test_pasted_text_returns_503_without_llm_key(monkeypatch):
     monkeypatch.delenv("GROQ_API_KEY", raising=False)
     monkeypatch.delenv("NVIDIA_API_KEY", raising=False)
-    r = client.post("/analyze", json={"opportunity_text": "Some real opportunity text about a client."})
+    r = client.post(
+        "/analyze", json={"opportunity_text": "Some real opportunity text about a client."}
+    )
     assert r.status_code == 503
     assert "GROQ_API_KEY" in r.json()["detail"]
 

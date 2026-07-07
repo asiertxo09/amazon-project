@@ -4,6 +4,7 @@ Run manually (`python backend/scripts/parse_docs.py`) whenever the source
 documents change. The running service never re-parses Office files at
 request time (PLAN.md §3a) — it only loads the outputs of this script.
 """
+
 import csv
 import json
 from pathlib import Path
@@ -37,13 +38,40 @@ def parse_service_description() -> None:
 def parse_pricing_tables() -> None:
     wb = openpyxl.load_workbook(ROOT / "PL_Industry_Challenge.xlsx", data_only=True)
     weight_bands = [
-        "0-0.25kg", "0.25-0.5kg", "0.5-0.75kg", "0.75-1kg", "1-1.5kg", "1.5-2kg",
-        "2-2.5kg", "2.5-3kg", "3-4kg", "4-5kg", "5-6kg", "6-7kg", "7-9kg", "9-12kg",
-        "12-15kg", "15-18kg", "18-21kg", "21-24kg", "24-27kg", "27-30kg",
+        "0-0.25kg",
+        "0.25-0.5kg",
+        "0.5-0.75kg",
+        "0.75-1kg",
+        "1-1.5kg",
+        "1.5-2kg",
+        "2-2.5kg",
+        "2.5-3kg",
+        "3-4kg",
+        "4-5kg",
+        "5-6kg",
+        "6-7kg",
+        "7-9kg",
+        "9-12kg",
+        "12-15kg",
+        "15-18kg",
+        "18-21kg",
+        "21-24kg",
+        "24-27kg",
+        "27-30kg",
     ]
     volume_tiers = [
-        "0-200", "201-300", "301-400", "401-500", "501-700", "701-900",
-        "901-1200", "1201-1500", "1501-2000", "2001-3000", "3001-4000", "4000+",
+        "0-200",
+        "201-300",
+        "301-400",
+        "401-500",
+        "501-700",
+        "701-900",
+        "901-1200",
+        "1201-1500",
+        "1501-2000",
+        "2001-3000",
+        "3001-4000",
+        "4000+",
     ]
 
     def read_cost_sheet(sheet_name: str) -> dict:
@@ -82,12 +110,33 @@ def parse_historical_opportunities() -> None:
     rows = list(ws.iter_rows(values_only=True))
     header = rows[0]
     field_names = [
-        "opportunity_id", "company_name", "industry", "year", "source", "incumbent_carrier",
-        "daily_volume_total", "geo_fit_pct", "daily_volume_serviceable", "avg_weight_kg",
-        "oversized_pct", "requires_intl", "intl_volume_share", "requires_pudo", "requires_b2b",
-        "weekend_need", "annual_revenue_potential_eur", "main_pain_point", "pain_severity",
-        "price_vs_incumbent_pct", "competitive_intensity", "sales_cycle_touches",
-        "decision_time_days", "contract_length_months", "outcome", "lost_reason", "final_margin_pct",
+        "opportunity_id",
+        "company_name",
+        "industry",
+        "year",
+        "source",
+        "incumbent_carrier",
+        "daily_volume_total",
+        "geo_fit_pct",
+        "daily_volume_serviceable",
+        "avg_weight_kg",
+        "oversized_pct",
+        "requires_intl",
+        "intl_volume_share",
+        "requires_pudo",
+        "requires_b2b",
+        "weekend_need",
+        "annual_revenue_potential_eur",
+        "main_pain_point",
+        "pain_severity",
+        "price_vs_incumbent_pct",
+        "competitive_intensity",
+        "sales_cycle_touches",
+        "decision_time_days",
+        "contract_length_months",
+        "outcome",
+        "lost_reason",
+        "final_margin_pct",
     ]
     assert len(field_names) == len(header), (len(field_names), len(header))
 

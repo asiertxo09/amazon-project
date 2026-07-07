@@ -4,6 +4,7 @@ Must explicitly capture *conflicting* figures (e.g. Pink Papaya's
 "3,500-4,000/day" vs "3,800/day", or France being both "not a rush" and
 "not a maybe later") rather than silently picking one.
 """
+
 from pydantic import BaseModel, Field
 
 from backend.agents.llm_client import get_client, model_for
@@ -53,7 +54,9 @@ SYSTEM_PROMPT = build_system_prompt(
 
 class FigureMention(BaseModel):
     value: float
-    context: str = Field(description="who/where this figure came from, e.g. 'Lucía, call, normal week'")
+    context: str = Field(
+        description="who/where this figure came from, e.g. 'Lucía, call, normal week'"
+    )
 
 
 class GeographyMention(BaseModel):

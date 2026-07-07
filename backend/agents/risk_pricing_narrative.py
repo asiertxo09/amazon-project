@@ -4,9 +4,10 @@ rationale/tradeoffs. Numeric fields (margin_pct, price) are already computed
 by backend/pricing.py — this agent only narrates them; it never invents or
 overrides a number.
 """
+
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 from backend.agents.extraction import ExtractionResult
 from backend.agents.gap_feasibility import GapFeasibilityResult
@@ -31,7 +32,7 @@ SYSTEM_PROMPT = build_system_prompt(
         guardrails=(
             "Never change or invent the numeric fields (margin_pct, avg_price_per_parcel_eur) — "
             "narrate them, don't alter them. The scenario `name` in your output MUST exactly match "
-            "one of \"Aggressive\", \"Balanced\", \"Conservative\", copied verbatim from the input. "
+            'one of "Aggressive", "Balanced", "Conservative", copied verbatim from the input. '
             "Ground every risk in something actually stated in the extracted data or feasibility "
             "notes — do not invent risks with no evidentiary basis. If the prospect's own figures "
             "were in conflict, that conflict itself is a valid Operational or Commercial risk."

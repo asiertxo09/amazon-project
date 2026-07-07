@@ -2,6 +2,7 @@
 against Service Description capabilities (RAG over the capability doc) ->
 produces the `exclusions` list and serviceable-volume inputs.
 """
+
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -88,7 +89,8 @@ class WinModelFeatureEstimate(BaseModel):
     industry: str
     source: Literal["Inbound", "Outbound", "Referral", "Partner"]
     defaulted_fields: list[str] = Field(
-        default_factory=list, description="names of fields above that had no textual basis and were defaulted"
+        default_factory=list,
+        description="names of fields above that had no textual basis and were defaulted",
     )
 
 

@@ -20,7 +20,17 @@ def test_build_system_prompt_includes_all_five_sections_and_trust_layer():
     assert "DATA to analyze" in prompt
 
     # sections must appear in a stable order: role, data, actions, guardrails, channels, trust layer
-    order = [prompt.index(m) for m in ["ROLE_MARKER", "DATA_MARKER", "ACTIONS_MARKER", "GUARDRAILS_MARKER", "CHANNELS_MARKER", "TRUST & SECURITY"]]
+    order = [
+        prompt.index(m)
+        for m in [
+            "ROLE_MARKER",
+            "DATA_MARKER",
+            "ACTIONS_MARKER",
+            "GUARDRAILS_MARKER",
+            "CHANNELS_MARKER",
+            "TRUST & SECURITY",
+        ]
+    ]
     assert order == sorted(order)
 
 
@@ -32,7 +42,14 @@ def test_all_agent_system_prompts_use_the_shared_framework():
     from backend.agents.synthesis import SYSTEM_PROMPT as synthesis_prompt
     from backend.agents.win_prob_narrative import SYSTEM_PROMPT as win_prob_prompt
 
-    for prompt in [extraction_prompt, gap_prompt, pitch_prompt, risk_prompt, synthesis_prompt, win_prob_prompt]:
+    for prompt in [
+        extraction_prompt,
+        gap_prompt,
+        pitch_prompt,
+        risk_prompt,
+        synthesis_prompt,
+        win_prob_prompt,
+    ]:
         assert "ROLE" in prompt
         assert "DATA" in prompt
         assert "ACTIONS" in prompt

@@ -1,0 +1,39 @@
+# Keep the backend build context lean and secret-free (Plan_v2 P1-A4).
+# NOTE: backend/data/*.csv is intentionally NOT ignored — the win model trains
+# from it.
+
+# Secrets / local env
+.env
+.env.*
+!.env.example
+
+# Python caches & virtualenvs
+**/__pycache__/
+**/*.pyc
+.venv/
+backend/.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# Frontend (built via its own image/context)
+frontend/node_modules/
+frontend/dist/
+
+# VCS & tooling
+.git/
+.github/
+.claude/
+
+# Large source documents / spreadsheets not needed at runtime
+*.pptx
+*.docx
+*.xlsx
+*.pptx:Zone.Identifier
+*.docx:Zone.Identifier
+*.xlsx:Zone.Identifier
+
+# OS/editor cruft
+.DS_Store

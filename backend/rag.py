@@ -4,6 +4,7 @@ similarity, embedded once at process startup via sentence-transformers
 (CPU, no external API). Grounds the gap/feasibility agent's citations for
 "Sources Used".
 """
+
 import json
 from pathlib import Path
 
@@ -20,10 +21,12 @@ def _build_passages() -> list[dict]:
     service_text = (DATA_DIR / "service_description.txt").read_text(encoding="utf-8")
     for block in service_text.split("--- slide ")[1:]:
         slide_num, _, rest = block.partition(" ---\n")
-        lines = [l.strip() for l in rest.split("\n") if l.strip()]
+        lines = [line.strip() for line in rest.split("\n") if line.strip()]
         for i in range(0, len(lines), 2):
             chunk = " ".join(lines[i : i + 2])
-            passages.append({"doc": "Service_description.pptx", "detail": f"slide {slide_num}", "text": chunk})
+            passages.append(
+                {"doc": "Service_description.pptx", "detail": f"slide {slide_num}", "text": chunk}
+            )
 
     pricing = json.loads((DATA_DIR / "pricing_tables.json").read_text(encoding="utf-8"))
     g = pricing["guardrails"]
@@ -39,7 +42,13 @@ def _build_passages() -> list[dict]:
         f"{g['vp_approval_required_below_pct']}%, automatic no-go below {g['automatic_no_go_below_pct']}%.",
     ]
     for line in guardrail_lines:
-        passages.append({"doc": "PL_Industry_Challenge.xlsx", "detail": "pricing guardrails (Read Me)", "text": line})
+        passages.append(
+            {
+                "doc": "PL_Industry_Challenge.xlsx",
+                "detail": "pricing guardrails (Read Me)",
+                "text": line,
+            }
+        )
 
     return passages
 

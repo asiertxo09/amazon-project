@@ -56,7 +56,12 @@ def _feasibility() -> GapFeasibilityResult:
 def _risk_pricing() -> RiskPricingNarrativeResult:
     return RiskPricingNarrativeResult(
         risk_assessment=[
-            {"category": "Commercial", "risk": "conflicting volume figures", "severity": "Med", "evidence": "call vs email"}
+            {
+                "category": "Commercial",
+                "risk": "conflicting volume figures",
+                "severity": "Med",
+                "evidence": "call vs email",
+            }
         ],
         scenario_narratives=[
             {"name": "Aggressive", "rationale": "wins volume", "tradeoffs": "thin buffer"},
@@ -72,7 +77,9 @@ async def test_run_pipeline_assembles_valid_contract(monkeypatch):
     monkeypatch.setattr(pipeline, "assess_feasibility", lambda extraction: _feasibility())
     monkeypatch.setattr(pipeline, "narrate_risk_and_pricing", lambda e, f, s: _risk_pricing())
     monkeypatch.setattr(
-        pipeline, "narrate_win_probability", lambda wp, comps: WinProbNarrativeResult(narrative="Solid fit given geo_fit.")
+        pipeline,
+        "narrate_win_probability",
+        lambda wp, comps: WinProbNarrativeResult(narrative="Solid fit given geo_fit."),
     )
     monkeypatch.setattr(
         pipeline,
@@ -85,7 +92,9 @@ async def test_run_pipeline_assembles_valid_contract(monkeypatch):
             assumptions_and_open_questions=["Volume figure unresolved between call and email"],
         ),
     )
-    monkeypatch.setattr(pipeline, "generate_pitch_deck", lambda ctx: MagicMock(markdown="# Proposal"))
+    monkeypatch.setattr(
+        pipeline, "generate_pitch_deck", lambda ctx: MagicMock(markdown="# Proposal")
+    )
 
     result = await pipeline.run_pipeline("raw opportunity text", opportunity_id="TEST-001")
 

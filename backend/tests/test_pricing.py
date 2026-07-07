@@ -1,5 +1,3 @@
-import math
-
 import pytest
 
 from backend import pricing

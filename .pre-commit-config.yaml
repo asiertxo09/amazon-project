@@ -1,0 +1,37 @@
+# Local commit-time gates mirroring CI (Plan_v2 P1-A3).
+#   uv run pre-commit install
+minimum_pre_commit_version: "3.5.0"
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.0
+    hooks:
+      - id: ruff
+        name: ruff (lint)
+        args: ["--fix"]
+        files: ^backend/
+      - id: ruff-format
+        name: ruff (format)
+        files: ^backend/
+
+  # Mypy runs through the project's locked environment so it matches CI exactly.
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy (typed core)
+        entry: uv run mypy backend
+        language: system
+        types: [python]
+        files: ^backend/
+        pass_filenames: false

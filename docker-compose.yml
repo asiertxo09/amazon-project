@@ -1,0 +1,50 @@
+# Local full-stack dev environment (Plan_v2 P1-A4).
+#   docker compose up --build
+# Serves: Postgres 16, the FastAPI backend (:8000), and the built frontend (:5173).
+# Backend secrets (GROQ_API_KEY / NVIDIA_API_KEY / LLM_PROVIDER) come from ./.env.
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: copilot
+      POSTGRES_PASSWORD: copilot
+      POSTGRES_DB: copilot
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U copilot -d copilot"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - .env
+    environment:
+      # Forward-looking: persistence lands in Workstream B; Settings ignores it for now.
+      DATABASE_URL: postgresql+asyncpg://copilot:copilot@db:5432/copilot
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: "http://localhost:8000"
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

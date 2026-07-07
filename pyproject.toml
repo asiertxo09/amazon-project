@@ -1,0 +1,88 @@
+[project]
+name = "opportunity-copilot-backend"
+version = "0.1.0"
+description = "Enterprise Opportunity Copilot — FastAPI analysis pipeline (Plan_v2 Phase 1)."
+readme = "README.md"
+requires-python = ">=3.12"
+
+# Runtime dependencies. Lower bounds match the audited working set (2026-07-07);
+# uv.lock pins the exact resolved versions for reproducibility (Plan_v2 P1-A1).
+dependencies = [
+    "fastapi>=0.139.0",
+    "uvicorn[standard]>=0.50.2",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.7.0",
+    "python-docx>=1.2.0",
+    "python-pptx>=1.0.2",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.3",
+    "scikit-learn>=1.9.0",
+    "numpy>=2.5.1",
+    "groq>=1.5.0",
+    "openai>=2.44.0",
+    "instructor>=1.15.4",
+    "sentence-transformers>=5.6.0",
+    "imbalanced-learn>=0.14.2",
+    "joblib>=1.5.3",
+]
+
+[project.optional-dependencies]
+# `uv sync --extra dev` installs the full toolchain used by CI gates (P1-A2/A3).
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=6.0.0",
+    "httpx>=0.28.1",
+    "ruff>=0.14.0",
+    "mypy>=1.14.0",
+    "pre-commit>=4.0.0",
+    "pandas-stubs>=2.2.0",
+    "types-openpyxl>=3.1.5",
+]
+
+[tool.uv]
+# Application, not a library — do not build/install the repo root as a wheel.
+package = false
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["backend"]
+
+[tool.ruff.lint]
+# Sensible baseline: pyflakes, pycodestyle, isort, bugbear, comprehensions, pyupgrade.
+select = ["E", "F", "W", "I", "B", "C4", "UP"]
+ignore = ["E501"]  # line length handled by the formatter, not the linter
+
+[tool.ruff.lint.per-file-ignores]
+"backend/tests/*" = ["B011"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+warn_redundant_casts = true
+warn_unused_ignores = false
+no_implicit_optional = true
+# Tests construct Pydantic models from dict literals (runtime-coerced) and
+# scripts/ is one-off dev tooling — neither is in the typed core the gate guards.
+exclude = ['^backend/tests/', '^backend/scripts/']
+
+# Strict gates on the correctness-critical core (Plan_v2 P1-A3).
+[[tool.mypy.overrides]]
+module = ["backend.schemas.*", "backend.pricing", "backend.ml.*"]
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+warn_return_any = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["backend/tests"]
+addopts = "-q"
+
+[tool.coverage.run]
+source = ["backend"]
+omit = ["backend/tests/*", "backend/scripts/*"]
+
+[tool.coverage.report]
+show_missing = true

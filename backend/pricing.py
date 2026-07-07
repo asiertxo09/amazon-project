@@ -4,6 +4,7 @@ Looks up First/Middle/Home-delivery mile costs by (volume tier x weight band),
 adds fixed overhead (FX-converted), applies region multiplier, and checks
 contribution-margin guardrails.
 """
+
 import json
 from pathlib import Path
 from typing import Literal
@@ -11,17 +12,38 @@ from typing import Literal
 DATA_PATH = Path(__file__).resolve().parent / "data" / "pricing_tables.json"
 _TABLES = json.loads(DATA_PATH.read_text())
 
-WEIGHT_BAND_UPPER_KG = [0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 9, 12, 15, 18, 21, 24, 27, 30]
-WEIGHT_BANDS = _TABLES["weight_bands"]
+WEIGHT_BAND_UPPER_KG = [
+    0.25,
+    0.5,
+    0.75,
+    1,
+    1.5,
+    2,
+    2.5,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+]
+WEIGHT_BANDS: list[str] = _TABLES["weight_bands"]
 assert len(WEIGHT_BAND_UPPER_KG) == len(WEIGHT_BANDS)
 
 VOLUME_TIER_UPPER = [200, 300, 400, 500, 700, 900, 1200, 1500, 2000, 3000, 4000, None]
-VOLUME_TIERS = _TABLES["volume_tiers"]
+VOLUME_TIERS: list[str] = _TABLES["volume_tiers"]
 assert len(VOLUME_TIER_UPPER) == len(VOLUME_TIERS)
 
-FIXED_OVERHEAD_USD = _TABLES["fixed_overhead_usd_per_parcel"]
-FX_RATE = _TABLES["usd_to_eur_fx_rate"]
-REGION_MULTIPLIER = _TABLES["region_multiplier"]
+FIXED_OVERHEAD_USD: float = _TABLES["fixed_overhead_usd_per_parcel"]
+FX_RATE: float = _TABLES["usd_to_eur_fx_rate"]
+REGION_MULTIPLIER: dict[str, float] = _TABLES["region_multiplier"]
 PREMIUM_ADDONS_EUR = _TABLES["premium_addons_eur"]
 GUARDRAILS = _TABLES["guardrails"]
 
@@ -32,30 +54,43 @@ MAX_SERVICEABLE_DIMENSION_CM = (80, 80, 60)
 
 
 def weight_band_for(weight_kg: float) -> str:
-    for upper, band in zip(WEIGHT_BAND_UPPER_KG, WEIGHT_BANDS):
+    for upper, band in zip(WEIGHT_BAND_UPPER_KG, WEIGHT_BANDS, strict=True):
         if weight_kg <= upper:
             return band
     return WEIGHT_BANDS[-1]
 
 
 def volume_tier_for(daily_volume: float) -> str:
-    for upper, tier in zip(VOLUME_TIER_UPPER, VOLUME_TIERS):
+    for upper, tier in zip(VOLUME_TIER_UPPER, VOLUME_TIERS, strict=True):
         if upper is None or daily_volume <= upper:
             return tier
     return VOLUME_TIERS[-1]
 
 
-def is_serviceable_parcel(weight_kg: float, dimensions_cm: tuple[float, float, float] | None = None) -> bool:
+def is_serviceable_parcel(
+    weight_kg: float, dimensions_cm: tuple[float, float, float] | None = None
+) -> bool:
     if weight_kg > MAX_SERVICEABLE_WEIGHT_KG:
         return False
     if dimensions_cm is not None:
-        if any(d > m for d, m in zip(sorted(dimensions_cm, reverse=True), sorted(MAX_SERVICEABLE_DIMENSION_CM, reverse=True))):
+        if any(
+            d > m
+            for d, m in zip(
+                sorted(dimensions_cm, reverse=True),
+                sorted(MAX_SERVICEABLE_DIMENSION_CM, reverse=True),
+                strict=True,
+            )
+        ):
             return False
     return True
 
 
 def is_serviceable_demand(
-    *, region: str, requires_pudo: bool = False, requires_intl: bool = False, requires_b2b: bool = False
+    *,
+    region: str,
+    requires_pudo: bool = False,
+    requires_intl: bool = False,
+    requires_b2b: bool = False,
 ) -> bool:
     """Mirrors the historical dataset's own serviceable-volume logic (PLAN.md §3a)."""
     if region not in REGION_MULTIPLIER:
@@ -68,9 +103,9 @@ def is_serviceable_demand(
 def unit_cost_eur(daily_volume: float, weight_kg: float, region: Region = "peninsula") -> float:
     tier = volume_tier_for(daily_volume)
     band = weight_band_for(weight_kg)
-    fm = _TABLES["first_mile_cost"][tier][band]
-    mm = _TABLES["middle_mile_cost"][tier][band]
-    hd = _TABLES["home_delivery_cost"][tier][band]
+    fm = float(_TABLES["first_mile_cost"][tier][band])
+    mm = float(_TABLES["middle_mile_cost"][tier][band])
+    hd = float(_TABLES["home_delivery_cost"][tier][band])
     overhead_eur = FIXED_OVERHEAD_USD / FX_RATE
     base_eur = fm + mm + hd + overhead_eur
     return base_eur * REGION_MULTIPLIER[region]
@@ -103,7 +138,11 @@ def pricing_scenarios(unit_cost: float) -> list[dict]:
     target = GUARDRAILS["target_contribution_margin_pct"]
     midpoint = (floor + target) / 2
     scenarios = []
-    for name, margin_pct in [("Aggressive", floor + 1), ("Balanced", midpoint), ("Conservative", target)]:
+    for name, margin_pct in [
+        ("Aggressive", floor + 1),
+        ("Balanced", midpoint),
+        ("Conservative", target),
+    ]:
         price = price_for_margin(unit_cost, margin_pct)
         scenarios.append(
             {

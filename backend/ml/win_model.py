@@ -5,6 +5,7 @@ model's output. Excludes outcome-dependent columns (lost_reason,
 final_margin_pct) and identifiers (opportunity_id, company_name) as features
 to avoid leakage.
 """
+
 from pathlib import Path
 
 import joblib

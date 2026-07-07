@@ -1,4 +1,5 @@
 """FastAPI entrypoint. Single POST /analyze endpoint (PLAN.md §3e)."""
+
 import asyncio
 import json
 import logging
@@ -9,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from backend.agents.llm_client import LLMNotConfiguredError
 from backend.agents.pipeline import run_pipeline
+from backend.config import get_settings
 from backend.schemas.opportunity_result import AnalyzeRequest, OpportunityResult
 
 logger = logging.getLogger(__name__)
@@ -17,7 +19,7 @@ app = FastAPI(title="Enterprise Opportunity Copilot")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=get_settings().cors_allow_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -39,13 +41,16 @@ def health() -> dict:
 @app.post("/analyze", response_model=OpportunityResult)
 async def analyze(request: AnalyzeRequest) -> OpportunityResult:
     if not request.demo and not (request.opportunity_text and request.opportunity_text.strip()):
-        raise HTTPException(status_code=400, detail="Provide either 'demo' or a non-empty 'opportunity_text'")
+        raise HTTPException(
+            status_code=400, detail="Provide either 'demo' or a non-empty 'opportunity_text'"
+        )
 
     if request.demo:
         opportunity_text = DEMO_TEXT_PATHS[request.demo].read_text(encoding="utf-8")
         opportunity_id = request.demo
     else:
-        opportunity_text = request.opportunity_text
+        # Guaranteed non-empty by the guard above; `or ""` only satisfies the type checker.
+        opportunity_text = request.opportunity_text or ""
         opportunity_id = None
 
     try:
@@ -57,9 +62,11 @@ async def analyze(request: AnalyzeRequest) -> OpportunityResult:
         if request.demo:
             # Fixture fallback keeps the demo path alive if LLM keys aren't set
             # (e.g. local dev without secrets) rather than hard-failing.
-            logger.warning("LLM not configured (%s); serving fixture for demo=%s", exc, request.demo)
+            logger.warning(
+                "LLM not configured (%s); serving fixture for demo=%s", exc, request.demo
+            )
             fixture = json.loads(FIXTURE_PATH.read_text())
             return OpportunityResult(**fixture)
         raise HTTPException(status_code=503, detail=str(exc)) from exc
-    except asyncio.TimeoutError as exc:
+    except TimeoutError as exc:
         raise HTTPException(status_code=504, detail="Analysis timed out — please retry.") from exc

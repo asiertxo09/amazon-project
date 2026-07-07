@@ -2,6 +2,7 @@
 sequence; independent steps run concurrently via asyncio.gather. No
 orchestration framework (explicitly not LangChain) — fully debuggable.
 """
+
 import asyncio
 import json
 import uuid
@@ -15,8 +16,8 @@ from backend.agents.synthesis import synthesize
 from backend.agents.win_prob_narrative import narrate_win_probability
 from backend.ml import win_model
 from backend.ml.comparables import find_comparables
+from backend.pricing import Region, unit_cost_eur
 from backend.pricing import pricing_scenarios as compute_pricing_scenarios
-from backend.pricing import unit_cost_eur
 from backend.schemas.opportunity_result import (
     Exclusion,
     OpportunityResult,
@@ -30,7 +31,9 @@ from backend.schemas.opportunity_result import (
 )
 
 
-def _win_model_features_dict(feasibility: GapFeasibilityResult, serviceable_daily_volume: float) -> dict:
+def _win_model_features_dict(
+    feasibility: GapFeasibilityResult, serviceable_daily_volume: float
+) -> dict:
     f = feasibility.win_model_features
     return {
         "geo_fit_pct": feasibility.geo_fit_pct_estimate,
@@ -52,7 +55,9 @@ def _win_model_features_dict(feasibility: GapFeasibilityResult, serviceable_dail
     }
 
 
-async def run_pipeline(opportunity_text: str, opportunity_id: str | None = None) -> OpportunityResult:
+async def run_pipeline(
+    opportunity_text: str, opportunity_id: str | None = None
+) -> OpportunityResult:
     extraction: ExtractionResult = await asyncio.to_thread(extract_opportunity, opportunity_text)
     feasibility: GapFeasibilityResult = await asyncio.to_thread(assess_feasibility, extraction)
 
@@ -77,9 +82,15 @@ async def run_pipeline(opportunity_text: str, opportunity_id: str | None = None)
         serviceable_daily_volume = declared_max_volume
 
     features = _win_model_features_dict(feasibility, serviceable_daily_volume)
-    region = "balearic_islands" if any(
-        "balear" in g.region.lower() for g in extraction.geography_mentions
-    ) and not any("spain" in g.region.lower() or "peninsula" in g.region.lower() for g in extraction.geography_mentions) else "peninsula"
+    region: Region = (
+        "balearic_islands"
+        if any("balear" in g.region.lower() for g in extraction.geography_mentions)
+        and not any(
+            "spain" in g.region.lower() or "peninsula" in g.region.lower()
+            for g in extraction.geography_mentions
+        )
+        else "peninsula"
+    )
 
     unit_cost = unit_cost_eur(
         daily_volume=serviceable_daily_volume,
@@ -119,16 +130,26 @@ async def run_pipeline(opportunity_text: str, opportunity_id: str | None = None)
             name=s["name"],
             margin_pct=s["margin_pct"],
             avg_price_per_parcel_eur=s["avg_price_per_parcel_eur"],
-            rationale=scenario_by_name[s["name"]].rationale if s["name"] in scenario_by_name else "",
-            tradeoffs=scenario_by_name[s["name"]].tradeoffs if s["name"] in scenario_by_name else "",
+            rationale=scenario_by_name[s["name"]].rationale
+            if s["name"] in scenario_by_name
+            else "",
+            tradeoffs=scenario_by_name[s["name"]].tradeoffs
+            if s["name"] in scenario_by_name
+            else "",
         )
         for s in scenarios
     ]
 
     sources_used = [
-        Source(doc="Service_description.pptx", detail="capability/coverage grounding for feasibility check"),
+        Source(
+            doc="Service_description.pptx",
+            detail="capability/coverage grounding for feasibility check",
+        ),
         Source(doc="PL_Industry_Challenge.xlsx", detail="pricing tables and guardrails"),
-        Source(doc="Historical_Opportunities.xlsx", detail="360-row training set and comparable-deal lookup"),
+        Source(
+            doc="Historical_Opportunities.xlsx",
+            detail="360-row training set and comparable-deal lookup",
+        ),
     ]
     market_intel_path = Path(__file__).resolve().parent.parent / "data" / "market_intelligence.json"
     for entry in json.loads(market_intel_path.read_text(encoding="utf-8"))[:2]:
@@ -150,7 +171,10 @@ async def run_pipeline(opportunity_text: str, opportunity_id: str | None = None)
             declared_daily_volume=declared_max_volume,
             serviceable_daily_volume=serviceable_daily_volume,
             geo_fit_pct=feasibility.geo_fit_pct_estimate,
-            exclusions=[Exclusion(reason=e.reason, volume_impact_pct=e.volume_impact_pct) for e in feasibility.exclusions],
+            exclusions=[
+                Exclusion(reason=e.reason, volume_impact_pct=e.volume_impact_pct)
+                for e in feasibility.exclusions
+            ],
         ),
         risk_assessment=[RiskItem(**r.model_dump()) for r in risk_pricing.risk_assessment],
         pricing_scenarios=pricing_scenario_models,

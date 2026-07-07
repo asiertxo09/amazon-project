@@ -3,6 +3,7 @@ commercial strategy, follow-up actions, assumptions/open questions. This is
 the final narrative layer over everything computed so far — it must not
 invent numbers already produced deterministically (pricing, win probability).
 """
+
 from typing import Literal
 
 from pydantic import BaseModel, Field

@@ -2,6 +2,7 @@
 output into a plain-language "why this score." Small/fast model tier — it
 only narrates a number the classifier already computed, never changes it.
 """
+
 from pydantic import BaseModel
 
 from backend.agents.llm_client import get_client, model_for
@@ -33,8 +34,12 @@ class WinProbNarrativeResult(BaseModel):
     narrative: str
 
 
-def narrate_win_probability(win_probability: dict, comparables: list[dict]) -> WinProbNarrativeResult:
-    user_content = f"Win probability output:\n{win_probability}\n\nComparable historical deals:\n{comparables}"
+def narrate_win_probability(
+    win_probability: dict, comparables: list[dict]
+) -> WinProbNarrativeResult:
+    user_content = (
+        f"Win probability output:\n{win_probability}\n\nComparable historical deals:\n{comparables}"
+    )
 
     client = get_client()
     return client.chat.completions.create(

@@ -2,6 +2,7 @@
 Markdown (the frontend renders it) — no PPTX generation, per the scope cut
 in PLAN.md §6. Large model tier — this is the most client-visible output.
 """
+
 from pydantic import BaseModel
 
 from backend.agents.llm_client import get_client, model_for

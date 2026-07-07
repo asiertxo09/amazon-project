@@ -10,6 +10,7 @@ structured output from upstream agents, never raw external text. The trust
 layer's prompt-injection defense is what stands between a hostile
 `opportunity_text` payload and the rest of the pipeline.
 """
+
 from dataclasses import dataclass
 
 
